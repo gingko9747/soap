@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <title>皂咖霏手工皂</title>
+
+  <!--Bootstrap架構語法 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- JQ大圖輪播外掛始 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".slider").bxSlider({
+        // mode:'vertical',垂直跑換圖
+        mode: 'fade',
+        auto: true,
+        // 可讓slider自動播放的參數
+        speed: 800,
+        pause: 4000,
+      });
+    });
+  </script>
+  <!-- JQ大圖輪播外掛末 -->
+
+  <!-- 先別人後自己的-->
+  <link rel="stylesheet" href="./layout.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* <!-- 老師改的 -->登入圖(原放LOGO)靠在左邊,解法:用@media(min-width:768px){}把登入圖跟選單包在一起 */
+    @media(min-width:768px) {
+      .navbar-collapse {
+        flex-basis: auto;
+        flex-grow: 0;
+      }
+    }
+
+    /* 修改大圖輪播的寬度 */
+    .bx-wrapper {
+      max-width: 1200px !important;
+      margin: 0 auto 60px auto;
+    }
+
+    /* 改JQ小圓點顏色(換頁指示器)抓出來另寫 */
+    .bx-wrapper .bx-pager.bx-default-pager a {
+      background-color: #c2e8e2;
+    }
+
+    .bx-wrapper .bx-pager.bx-default-pager a:hover,
+    .bx-wrapper .bx-pager.bx-default-pager a:focus {
+      /* a:focus 用鍵盤移過去 */
+      background-color: #c2e8e2;
+    }
+
+    .bx-wrapper .bx-pager.bx-default-pager a.active {
+      background-color: rgb(100, 195, 221);
+    }
+
+    .bx-wrapper .bx-pager.bx-default-pager a::after {
+      content: '';
+      background-color: rgba(61, 198, 232, 0);
+      /* 以下是透明的另兩種寫法 */
+      /* opacity: 0; */
+      /* background-color: transparent; */
+
+      position: absolute;
+      /* 定位 */
+      left: -5px;
+      top: -5px;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* swiper CSS */
+
+    .swiper {
+      width: 85%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 箭頭的CSS箭頭的CSS */
+    .swiper-button-next,
+    .swiper-button-prev {
+      /* 小箭頭高度70% */
+      top: var(--swiper-navigation-top-offset, 70%);
+      color: #80c9c4;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- LOGO區 -->
+  <header>
+    <a href="./index.html">
+      <img src="./images/logo-1.svg" alt="">
+    </a>
+
+  </header>
+
+
+  <!--  Bootstrap header(LOGO nav選單區)  -->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top text-nowrap">
+    <!-- text-nowrap強制不自動換行 -->
+
+    <!-- 導覽列黏貼sticky-top(原來不在最上面,卷軸走到導覽列底才黏在最上面)或 恆置頂fixed-top -->
+    <div class="container-xl justify-content-md-center">
+      <!-- 把按鈕集中到中央container-xl(寬1200px),預設值container-fluid從頭到尾都百分百 -->
+
+      <!-- 桌機版·手機版都會看到-頭 -->
+      <!-- LOGO圖區(登入小人圖) -->
+      <a class="navbar-brand" href="./login.html">
+        <img src="./images/icon _person.svg" height="35" alt="./index.html"> <!-- LOGO高度 -->
+      </a>
+      <!-- 桌機版·手機版都桌機版會看到-尾 -->
+
+      <!-- 手機版會看到-頭 -->
+      <!-- 漢堡圖案紐button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- 手機版會看到-尾 -->
+
+      <!-- 桌機版會看到-頭 ,手機版這裡會先(收合collapse) -->
+      <!-- 導覽按鈕collapse navbar-collapse -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- ul一組頭 -->
+        <ul class="navbar-nav m-auto mb-4 mb-md-0 text-center">
+          <!-- ms-auto靠左邊 ,md-靠右 ,m-auto左右居中,mb-4漢堡選單下方的間距,text-center文字置中-->
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="healing.html">一般療癒系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="sensitive_skin.html"> 特殊肌膚系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="house_pets.html">家事&寵物系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="news.html">最新消息</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">與我們聯絡</a>
+          </li>
+
+          <!-- 桌機版要出現圖 手機版要出現圖跟文字 -->
+          <li class="nav-item">
+            <a class="nav-link" href="./shopping-carts.html">
+              <!-- 解法:用<span>下指令讓文字在手機版不要出現-->
+              <span class="d-md-none">加入購物車</span>
+              <img src="./images/icon _shopping cart.svg" alt=""></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./add-heart.html">
+              <span class="d-md-none">加入收藏</span>
+              <img src="./images/icon _heart.svg" alt=""></a>
+          </li>
+
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- 首頁內容上半大盒 -->
+  <main>
+    <h1>平靜的幸福</h1>
+    <p>上課學做皂純粹只是好玩和有趣<br>
+      打皂入模切皂的過程 是一種心情的放鬆 & 腦袋的放空<br>
+      那種開心像在創造新作品 會有期待開箱的樂趣<br>
+      這樣的單純心做的手工皂~洗起來應該是平靜的幸福！</p>
+    <br>
+    <!-- 內容 -->
+    <div class="content">
+
+      <!-- JQ大圖輪播外掛始 -->
+      <div class="slider">
+        <div><img src="./images/banner_index-1.jpg" alt=""></div>
+        <div><img src="./images/banner_index-2.jpg" alt=""></div>
+        <div><img src="./images/banner_index-3.jpg" alt=""></div>
+        <div><img src="./images/banner_index-4.jpg" alt=""></div>
+      </div>
+      <!-- JQ大圖輪播外掛末 -->
+
+      <!-- 熱門商品區 -->
+      <h1>TOP 熱銷商品</h1><br>
+    </div>
+  </main>
+
+  <!-- 首頁內容下半大盒 -->
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- 圖1 -->
+      <div class="swiper-slide">
+        <div class="box">
+          <a href="healing-9.html">
+            <!-- 點圖連結到個別介紹頁 -->
+
+            <div class="box_image">
+              <img src="./images/504071_s.jpg" alt="" />
+            </div>
+
+            <!-- box的小盒文字內容 -->
+            <div class="box_inner">
+              <div class="card-body"><a href="healing-9.html" class="card-title">
+                  <h3>絲瓜水極品潤膚皂</h3>
+
+                  <div class="product-price">
+                    <p>
+                      適用所有膚質<br />
+                      絲瓜水：滋潤、舒緩、保濕、溫和無刺激
+                    </p>
+                    <p class="on-sale-price">NT$500</p>
+                </a>
+                <div class="card-btn-group">
+                  <div class="card-btn-group">
+                    <a class="heart_1" href="./add-heart.html">
+                      <img src="./images/icon _heart_1.svg" alt="">
+                    </a>
+                  </div>
+
+                  <div class="card-btn-group">
+                    <a class="cart_1" href="./shopping-carts.html">
+                      <img src="./images/icon _shopping cart_1.svg" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </a>
+      </div>
+    </div> <!-- <div class="swiper-slide">的尾 -->
+
+    <!-- 圖2 -->
+    <div class="swiper-slide">
+      <div class="box">
+        <a href="healing-8.html">
+          <!-- 點圖連結到個別介紹頁 -->
+
+          <div class="box_image">
+            <img src="./images/504047_0s.jpg" alt="" />
+          </div>
+
+          <!-- box的小盒文字內容 -->
+          <div class="box_inner">
+            <div class="card-body"><a href="healing-8.html" class="card-title">
+                <h3>漢方美肌淨白美人皂</h3>
+
+                <div class="product-price">
+                  <p>
+                    精油：薰衣草、廣霍香、中藥橄欖油、荷荷芭油
+                  </p>
+                  <p class="on-sale-price">NT$550</p>
+              </a>
+              <div class="card-btn-group">
+                <div class="card-btn-group">
+                  <a class="heart_1" href="./add-heart.html">
+                    <img src="./images/icon _heart_1.svg" alt="">
+                  </a>
+                </div>
+
+                <div class="card-btn-group">
+                  <a class="cart_1" href="./shopping-carts.html">
+                    <img src="./images/icon _shopping cart_1.svg" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </a>
+    </div>
+  </div><!-- <div class="swiper-slide">的尾 -->
+
+  <!-- 圖3 -->
+  <div class="swiper-slide">
+    <div class="box">
+      <a href="healing-1.html">
+        <!-- 點圖連結到個別介紹頁 -->
+
+        <div class="box_image">
+          <img src="./images/504050_0s.jpg" alt="" />
+        </div>
+
+        <!-- box的小盒文字內容1 -->
+        <div class="box_inner">
+          <div class="card-body"><a href="healing-1.html" class="card-title">
+              <h3>世界地圖皂</h3>
+
+              <div class="product-price">
+                <p>
+                  中性肌<br />
+                  精油：薰衣草、迷迭香、歐薄荷
+                </p>
+                <!-- <del class="original-price">$12,000</del> -->
+                <p class="on-sale-price">NT$550</p>
+            </a>
+            <div class="card-btn-group">
+              <div class="card-btn-group">
+                <a class="heart_1" href="./add-heart.html">
+                  <img src="./images/icon _heart_1.svg" alt="">
+                </a>
+              </div>
+
+              <div class="card-btn-group">
+                <a class="cart_1" href="./shopping-carts.html">
+                  <img src="./images/icon _shopping cart_1.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  </div><!-- <div class="swiper-slide">的尾 -->
+
+  <!-- 圖4 -->
+  <div class="swiper-slide">
+    <div class="box">
+      <a href="sensitive_skin-3.html">
+        <!-- 點圖連結到個別介紹頁 -->
+
+        <div class="box_image">
+          <img src="./images/504103_0_s.jpg" alt="" />
+        </div>
+
+        <!-- box的小盒文字內容 -->
+        <div class="box_inner">
+          <div class="card-body"><a href="sensitive_skin-3.html" class="card-title">
+              <h3>酪梨油皂（痘痘肌）</h3>
+
+              <div class="product-price">
+                <p>
+                  適合敏感性肌膚<br />
+                  酪梨油：滋潤、保濕、修護
+                </p>
+                <p class="on-sale-price">NT$550</p>
+            </a>
+            <div class="card-btn-group">
+              <div class="card-btn-group">
+                <a class="heart_1" href="./add-heart.html">
+                  <img src="./images/icon _heart_1.svg" alt="">
+                </a>
+              </div>
+
+              <div class="card-btn-group">
+                <a class="cart_1" href="./shopping-carts.html">
+                  <img src="./images/icon _shopping cart_1.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  </div><!-- <div class="swiper-slide">的尾 -->
+
+  <!-- 圖5 -->
+  <div class="swiper-slide">
+    <div class="box">
+      <a href="sensitive_skin-1.html">
+        <!-- 點圖連結到個別介紹頁 #換成 sensitive_skin-1.html -->
+
+        <div class="box_image">
+          <img src="./images/504048_0s.jpg" alt="" />
+        </div>
+
+        <!-- box的小盒文字內容 -->
+        <div class="box_inner">
+          <div class="card-body"><a href="sensitive_skin-1.html" class="card-title">
+              <h3>漢方問題肌膚舒緩皂</h3>
+
+              <div class="product-price">
+                <p>
+                  痘痘肌、乾性等敏感肌<br />
+                  特調：廣霍香、中藥
+                </p>
+                <p class="on-sale-price">NT$550</p>
+            </a>
+            <div class="card-btn-group">
+              <div class="card-btn-group">
+                <a class="heart_1" href="./add-heart.html">
+                  <img src="./images/icon _heart_1.svg" alt="">
+                </a>
+              </div>
+
+              <div class="card-btn-group">
+                <a class="cart_1" href="./shopping-carts.html">
+                  <img src="./images/icon _shopping cart_1.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  </div><!-- <div class="swiper-slide">的尾 -->
+
+  <!-- 圖6 -->
+  <div class="swiper-slide">
+    <div class="box">
+      <a href="sensitive_skin-7.html">
+        <!-- 點圖連結到個別介紹頁 -->
+
+        <div class="box_image">
+          <img src="./images/504100_s.jpg" alt="" />
+        </div>
+
+        <!-- box的小盒文字內容 -->
+        <div class="box_inner">
+          <div class="card-body"><a href="sensitive_skin-7.html" class="card-title">
+              <h3>水貂油親膚皂（乾性肌）</h3>
+
+              <div class="product-price">
+                <p>
+                  適合乾性肌膚<br />
+                  精油：玫瑰天竺葵、雪松
+                </p>
+                <p class="on-sale-price">NT$550</p>
+            </a>
+            <div class="card-btn-group">
+              <div class="card-btn-group">
+                <a class="heart_1" href="./add-heart.html">
+                  <img src="./images/icon _heart_1.svg" alt="">
+                </a>
+              </div>
+
+              <div class="card-btn-group">
+                <a class="cart_1" href="./shopping-carts.html">
+                  <img src="./images/icon _shopping cart_1.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  </div><!-- <div class="swiper-slide">的尾 -->
+
+  <!-- 圖7 -->
+  <div class="swiper-slide">
+    <div class="box">
+      <a href="house_pets-1.html">
+        <!-- 點圖連結到個別介紹頁 #換成 sensitive_skin-1.html -->
+
+        <div class="box_image">
+          <img src="./images/504070_0_s.jpg" alt="" />
+        </div>
+
+        <!-- box的小盒文字內容 -->
+        <div class="box_inner">
+          <div class="card-body"><a href="house_pets-1.html" class="card-title">
+              <h3>苦楝寵物皂（人/寵物都能洗）</h3>
+
+              <div class="product-price">
+                <p>
+                  所有膚質適用<br />
+                  苦楝：抗炎抗菌、改善皮膚
+                </p>
+                <p class="on-sale-price">NT$500</p>
+            </a>
+            <div class="card-btn-group">
+              <div class="card-btn-group">
+                <a class="heart_1" href="./add-heart.html">
+                  <img src="./images/icon _heart_1.svg" alt="">
+                </a>
+              </div>
+
+              <div class="card-btn-group">
+                <a class="cart_1" href="./shopping-carts.html">
+                  <img src="./images/icon _shopping cart_1.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  </div><!-- <div class="swiper-slide">的尾 -->
+
+  <!-- 圖8 -->
+  <div class="swiper-slide">
+    <div class="box">
+      <a href="house_pets-3.html">
+        <!-- 點圖連結到個別介紹頁 -->
+
+        <div class="box_image">
+          <img src="./images/504069_0s.jpg" alt="" />
+        </div>
+
+        <!-- box的小盒文字內容 -->
+        <div class="box_inner">
+          <div class="card-body"><a href="house_pets-3.html" class="card-title">
+              <h3>抽象畫家事皂系列 A</h3>
+
+              <div class="product-price">
+                <p>所有膚質適用<br />
+                  椰子油：保濕、抗菌、舒緩
+                </p>
+                <p class="on-sale-price">NT$500</p>
+            </a>
+            <div class="card-btn-group">
+              <div class="card-btn-group">
+                <a class="heart_1" href="./add-heart.html">
+                  <img src="./images/icon _heart_1.svg" alt="">
+                </a>
+              </div>
+
+              <div class="card-btn-group">
+                <a class="cart_1" href="./shopping-carts.html">
+                  <img src="./images/icon _shopping cart_1.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  </div><!-- <div class="swiper-slide">的尾 -->
+
+  <!-- 圖9 -->
+  <div class="swiper-slide">
+    <div class="box">
+      <a href="house_pets-2.html">
+        <!-- 點圖連結到個別介紹頁 #換成sensitive_skin-2.html-->
+
+        <div class="box_image">
+          <img src="./images/504092_s.jpg" alt="" />
+        </div>
+
+        <!-- box的小盒文字內容 -->
+        <div class="box_inner">
+          <div class="card-body"><a href="house_pets-2.html" class="card-title">
+              <h3>橘子油洗衣粉</h3>
+
+              <div class="product-price">
+                <p>
+                  橘子油：天然去油污、抗菌除臭、溫和不刺激、環保無毒
+                </p>
+                <p class="on-sale-price">NT$450</p>
+            </a>
+            <div class="card-btn-group">
+              <div class="card-btn-group">
+                <a class="heart_1" href="./add-heart.html">
+                  <img src="./images/icon _heart_1.svg" alt="">
+                </a>
+              </div>
+
+              <div class="card-btn-group">
+                <a class="cart_1" href="./shopping-carts.html">
+                  <img src="./images/icon _shopping cart_1.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  </div><!-- <div class="swiper-slide">的尾 -->
+
+
+  </div>
+  <!-- 底下小圓點(隱藏沒有使用)<div class="swiper-pagination"></div> -->
+  <!-- 左右方向箭頭 -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  </div>
+
+
+
+  <!-- 頁尾區 -->
+  <footer>
+    Copyright © 2025 皂咖霏 版權所有 All rights reserved.
+  </footer>
+
+  <!-- Bootstrap的JS語法Bundle捆 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      // Loop循環(最後一張接第一張)
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      // 使底下小圓點可以按(沒有使用)
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        1900: {
+          slidesPerView: 5,
+          spaceBetween: 20,
+        },
+      },
+      // 控制左右方向鍵的程式
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+  <!-- 老師做的插入滑入會變顏色的按鈕 -->
+
+  <script>
+    $('.heart_1 img').on('mouseenter', function () {
+      $(this).attr('src', './images/icon _heart_2.svg')
+    });
+
+    $('.heart_1 img').on('mouseleave', function () {
+      $(this).attr('src', './images/icon _heart_1.svg')
+    });
+
+  </script>
+
+  <script>
+    $('.cart_1 img').on('mouseenter', function () {
+      $(this).attr('src', './images/icon _shopping cart_2.svg')
+    });
+
+    $('.cart_1 img').on('mouseleave', function () {
+      $(this).attr('src', './images/icon _shopping cart_1.svg')
+    });
+
+  </script>
+
+
+
+</body>
+
+</html>

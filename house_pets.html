@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皂咖霏手工皂-家事與寵物系列</title>
+
+  <!--Bootstrap架構語法 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!-- JQ大圖輪播外掛始 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+  <!-- 先別人後自己的-->
+  <link rel="stylesheet" href="./layout.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* <!-- 老師改的 -->登入圖(原放LOGO)靠在左邊,解法:用@media(min-width:768px){}把登入圖跟選單包在一起 */
+    @media(min-width:768px) {
+      .navbar-collapse {
+        flex-basis: auto;
+        flex-grow: 0;
+      }
+    }
+
+    /* 系列頁首大圖底下到小格的間距 */
+    .slider {
+      margin-bottom: 45px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- LOGO -->
+  <header>
+    <a href="./index.html">
+      <img src="./images/logo-1.svg" alt="">
+    </a>
+  </header>
+
+
+  <!--  Bootstrap header(LOGO nav選單區)  -->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top text-nowrap">
+    <!-- text-nowrap強制不自動換行 -->
+
+    <!-- 導覽列黏貼sticky-top(原來不在最上面,走到上面才黏在最上面)或 恆置頂fixed-top -->
+    <div class="container-xl justify-content-md-center">
+      <!-- 把按鈕集中到中央container-xl(寬1200px),預設值container-fluid從頭到尾都百分百 -->
+
+      <!-- 桌機版·手機版都會看到-頭 -->
+
+      <!-- LOGO圖區  (登入小人圖)-->
+      <a class="navbar-brand" href="./login.html">
+        <img src="./images/icon _person.svg" height="35" alt="">
+        <!-- LOGO高度35 -->
+      </a>
+      <!-- 桌機版·手機版都桌機版會看到-尾 -->
+
+      <!-- 手機版會看到-頭 -->
+      <!-- 漢堡圖案紐button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- 手機版會看到-尾 -->
+
+      <!-- 桌機版會看到-頭 ,手機版這裡會先(收合collapse) -->
+      <!-- 導覽按鈕collapse navbar-collapse -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- ul一組頭 -->
+        <ul class="navbar-nav m-auto mb-4 mb-md-0 text-center">
+          <!-- ms-auto靠左邊 ,md-靠右 ,m-auto左右居中,mb-4漢堡選單下方的間距,text-center文字置中-->
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="healing.html">一般療癒系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="sensitive_skin.html"> 特殊肌膚系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="house_pets.html">家事&寵物系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="news.html">最新消息</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">與我們聯絡</a>
+          </li>
+
+          <!-- 桌機版要出現圖 手機版要出現圖跟文字 -->
+          <li class="nav-item">
+            <a class="nav-link" href="./shopping-carts.html">
+              <!-- 解法:用<span>下指令讓文字在手機版不要出現-->
+              <span class="d-md-none">加入購物車</span>
+              <img src="./images/icon _shopping cart.svg" alt=""></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./add-heart.html">
+              <span class="d-md-none">加入收藏</span>
+              <img src="./images/icon _heart.svg" alt=""></a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+  </nav>
+
+  <!-- 頁首文字敘述 -->
+  <main>
+    <h1>家事與寵物系列</h1>
+    <p>
+      家事和寵物精油香皂，是生活中的小幫手。<br />
+      溫和的護理成分，能夠保護您的肌膚，有效清潔家居，讓家居環境芳香宜人。<br />
+      提供您的寵物溫和呵護毛孩的肌膚，為毛孩帶來清新舒適的感受。<br />
+      這款香皂是關心家庭和毛茸茸伴侶的最佳選擇。<br />
+    </p>
+
+    <!-- 系列頁首大圖 -->
+    <div class="slider">
+      <img src="./images/banner_index-5.jpg" class="card" alt="">
+    </div>
+  </main>
+
+  <!-- 內容大盒子 -->
+  <div class="bbox_all">
+
+    <!-- <div class="bbox_all col-md m-auto mb-md-0 text-center"> -->
+    <!-- <ul class="navbar-nav m-auto mb-4 mb-md-0 text-center"> -->
+    <!-- ms-auto靠左邊 ,md-靠右 ,m-auto左右居中,mb-4漢堡選單下方的間距,text-center文字置中-->
+
+
+    <!-- 個別產品小格1 -->
+    <div class="box">
+      <a href="house_pets-1.html">
+        <!-- 點圖連結到個別介紹頁 #換成 sensitive_skin-1.html -->
+
+        <div class="box_image">
+          <img src="./images/504070_0_s.jpg" alt="" />
+        </div>
+
+        <!-- box的小盒文字內容 -->
+        <div class="box_inner">
+          <div class="card-body"><a href="house_pets-1.html" class="card-title">
+              <h3>苦楝寵物皂（人/寵物都能洗）</h3>
+
+              <div class="product-price">
+                <p>
+                  所有膚質適用<br />
+                  苦楝：抗炎、抗菌、改善皮膚問題
+                </p>
+                <p class="on-sale-price">NT$500</p>
+            </a>
+            <div class="card-btn-group">
+              <div class="card-btn-group">
+                <a class="heart_1" href="./add-heart.html">
+                  <img src="./images/icon _heart_1.svg" alt="">
+                </a>
+              </div>
+
+              <div class="card-btn-group">
+                <a class="cart_1" href="./shopping-carts.html">
+                  <img src="./images/icon _shopping cart_1.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  <!-- 個別產品小格1 -->
+
+  <!-- 個別產品小格2 -->
+  <div class="box">
+    <a href="house_pets-2.html">
+      <!-- 點圖連結到個別介紹頁 #換成sensitive_skin-2.html-->
+
+      <div class="box_image">
+        <img src="./images/504092_s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="house_pets-2.html" class="card-title">
+            <h3>橘子油洗衣粉</h3>
+
+            <div class="product-price">
+              <p>
+                橘子油：天然去油污、抗菌除臭、溫和不刺激
+              </p>
+              <p class="on-sale-price">NT$450</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+  <!-- 個別產品小格2 -->
+
+  <!-- 個別產品小格3 -->
+  <div class="box">
+    <a href="house_pets-3.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/504069_0s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="house_pets-3.html" class="card-title">
+            <h3>抽象畫家事皂系列 A</h3>
+
+            <div class="product-price">
+              <p>所有膚質適用<br />
+                椰子油：保濕、抗菌、舒緩
+              </p>
+              <p class="on-sale-price">NT$500</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+  <!-- 個別產品小格3 -->
+
+  <!-- 個別產品小格4 -->
+  <div class="box">
+    <a href="house_pets-4.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/504068_0s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="house_pets-4.html" class="card-title">
+            <h3>抽象畫家事皂系列 B</h3>
+
+            <div class="product-price">
+              <p>
+                所有膚質適用<br />
+                椰子油：保濕、抗菌、舒緩
+              </p>
+              <p class="on-sale-price">NT$500</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+  <!-- 個別產品小格4 -->
+
+  <!-- 個別產品小格5 -->
+  <div class="box">
+    <a href="house_pets-5.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/hi_s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="house_pets-5.html" class="card-title">
+            <h3>Hi~貓掌桃膠柔膚皂</h3>
+
+            <div class="product-price">
+              <p>
+                適合中性肌膚<br />
+                精油：薰衣草、苦橙葉、甜橙、乳香
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+  <!-- 個別產品小格5 -->
+
+  <!-- 個別產品小格6 -->
+  <div class="box">
+    <a href="house_pets-6.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/hello_kitty_s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="house_pets-6.html" class="card-title">
+            <h3>Hello Kitty 桃膠柔膚皂</h3>
+
+            <div class="product-price">
+              <p>
+                適合中性肌膚<br />
+                精油：薰衣草、苦橙葉、甜橙、乳香
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+  <!-- 個別產品小格6 -->
+
+  <!-- 個別產品小格7 -->
+  <div class="box">
+    <a href="house_pets-7.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/504085_0s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="house_pets-7.html" class="card-title">
+            <h3>彩虹冰淇淋潔顏皂</h3>
+
+            <div class="product-price">
+              <p>
+                適合中性肌膚<br />
+                耶子油：柔滑洗感，潔淨不緊繃
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+  <!-- 個別產品小格7 -->
+
+  <!-- 個別產品小格8 -->
+
+  <div class="box">
+    <a href="house_pets-8.html">
+      <!-- 點圖連結到個別介紹頁 #換成healing-2.html-->
+
+      <div class="box_image">
+        <img src="./images/van_goghs.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="house_pets-8.html" class="card-title">
+            <h3>手工皂藝術創作：一抹綠</h3>
+
+            <div class="product-price">
+              <p>
+                適合中性肌膚<br />
+                向梵谷致敬．尺寸20cmx20cm
+              </p>
+              <p class="on-sale-price">NT$600</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+  <!-- 個別產品小格8 -->
+
+
+
+  </div><!-- 首頁內容下半大盒的尾 -->
+
+  <!-- 頁尾區 -->
+  <footer>
+    Copyright © 2025 皂咖霏 版權所有 All rights reserved.
+  </footer>
+
+  <!-- Bootstrap的JS語法Bundle捆 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+
+  <!-- 老師做的插入滑入會變顏色的按鈕 -->
+
+  <script>
+    $('.heart_1 img').on('mouseenter', function () {
+      $(this).attr('src', './images/icon _heart_2.svg')
+    });
+
+    $('.heart_1 img').on('mouseleave', function () {
+      $(this).attr('src', './images/icon _heart_1.svg')
+    });
+
+  </script>
+
+  <script>
+    $('.cart_1 img').on('mouseenter', function () {
+      $(this).attr('src', './images/icon _shopping cart_2.svg')
+    });
+
+    $('.cart_1 img').on('mouseleave', function () {
+      $(this).attr('src', './images/icon _shopping cart_1.svg')
+    });
+
+  </script>
+
+</body>
+
+</html>

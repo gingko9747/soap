@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皂咖霏手工皂-最新消息</title>
+
+  <!--Bootstrap架構語法 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
+  <!-- 先別人後自己的-->
+  <link rel="stylesheet" href="./layout.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* <!-- 老師改的 -->登入圖(原放LOGO)靠在左邊,解法:用@media(min-width:768px){}把登入圖跟選單包在一起 */
+    @media(min-width:768px) {
+      .navbar-collapse {
+        flex-basis: auto;
+        flex-grow: 0;
+      }
+    }
+
+    container {
+      margin: 0px auto;
+    }
+
+    body {
+      color: rgb(127, 102, 102);
+    }
+
+    section {
+      margin: 0 auto;
+      /* margin: 0 0 0 100px; */
+      /* text-align: center; */
+    }
+
+    a {
+      color: rgb(110, 90, 90);
+      text-decoration: underline;
+    }
+
+    .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-top: calc(-1 * var(--bs-gutter-y));
+      /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+      /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
+      margin-left: 10px;
+      margin-right: 10px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* 圖片 */
+    img,
+    svg {
+      border-radius: 6px;
+      /* 圓角 */
+    }
+
+    /* 大標文字間距 */
+    h2 {
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+    }
+
+    h4 {
+      color: rgb(127, 102, 102);
+      justify-content: center;
+      /* 水平居中 */
+      align-items: center;
+      /* 垂直居中 */
+    }
+
+    /* 文字內容段落上下距離 */
+    p {
+      margin-top: 19px;
+      margin-bottom: 1rem;
+    }
+
+    a:hover {
+      color: rgb(133, 174, 164);
+    }
+
+    .card-body {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      padding: 1rem 1rem;
+      text-align: left;
+    }
+
+    /* 頁碼文字 */
+    .page-link {
+      font-size: 20px;
+      position: relative;
+      display: block;
+      color: rgb(127, 102, 102);
+      text-decoration: none;
+      transition: color .15s
+    }
+
+    .page-item:not(:first-child) .page-link {
+      margin-left: 10px;
+    }
+
+    .page-link:hover {
+      z-index: 2;
+      color: rgb(143, 199, 192);
+      background-color: transparent;
+    }
+
+    .nav-link {
+      display: block;
+      /* padding: 10px; */
+      letter-spacing: 1.6px;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+      color: rgb(127, 102, 102);
+      background-color: rgb(204, 232, 225);
+    }
+
+    .nav-pills .nav-link {
+      background: none;
+      border: 0;
+      border-radius: 6px;
+      /* 圓角 */
+      text-align: center;
+    }
+
+    .ps-3 {
+      /* padding-left: 0.6rem !important; */
+      padding: 20px;
+      align-items: center;
+      /* 置中 */
+    }
+
+    /* 頁碼列 */
+    .page-link {
+      margin: 5px;
+    }
+
+    @media (min-width: 768px) {
+      .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+        padding: 22px 18px;
+      }
+    }
+
+    /* 頂圖橫幅banner區 */
+    .bg-image-signup {
+      background-image: url(./images/img-news.jpg);
+    }
+
+    .bg-image {
+      background-position: 80%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOGO區 -->
+  <header>
+    <a href="./index.html">
+      <img src="./images/logo-1.svg" alt="">
+    </a>
+
+  </header>
+
+  <!--  Bootstrap header(LOGO nav選單區)  -->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top text-nowrap">
+    <!-- text-nowrap強制不自動換行 -->
+
+    <!-- 導覽列黏貼sticky-top(原來不在最上面,走到上面才黏在最上面)或 恆置頂fixed-top -->
+    <div class="container-xl justify-content-md-center">
+      <!-- 把按鈕集中到中央container-xl(寬1200px),預設值container-fluid從頭到尾都百分百 -->
+
+      <!-- 桌機版·手機版都會看到-頭 -->
+      <!-- LOGO圖區(登入小人圖) -->
+      <a class="navbar-brand" href="./login.html">
+        <img src="./images/icon _person.svg" height="35" alt="./index.html"> <!-- LOGO高度 -->
+      </a>
+      <!-- 桌機版·手機版都桌機版會看到-尾 -->
+
+      <!-- 手機版會看到-頭 -->
+      <!-- 漢堡圖案紐button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- 手機版會看到-尾 -->
+
+      <!-- 桌機版會看到-頭 ,手機版這裡會先(收合collapse) -->
+      <!-- 導覽按鈕collapse navbar-collapse -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- ul一組頭 -->
+        <ul class="navbar-nav m-auto mb-4 mb-md-0 text-center">
+          <!-- ms-auto靠左邊 ,md-靠右 ,m-auto左右居中,mb-4漢堡選單下方的間距,text-center文字置中-->
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="healing.html">一般療癒系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="sensitive_skin.html"> 特殊肌膚系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="house_pets.html">家事&寵物系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="#">最新消息</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">與我們聯絡</a>
+          </li>
+
+          <!-- 桌機版要出現圖 手機版要出現圖跟文字 -->
+          <li class="nav-item">
+            <a class="nav-link" href="./shopping-carts.html">
+              <!-- 解法:用<span>下指令讓文字在手機版不要出現-->
+              <span class="d-md-none">加入購物車</span>
+              <img src="./images/icon _shopping cart.svg" alt=""></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./add-heart.html">
+              <span class="d-md-none">加入收藏</span>
+              <img src="./images/icon _heart.svg" alt=""></a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 頂圖banner區頭 -->
+
+  <div class="bg-image bg-image-signup">
+  </div>
+  <!-- 頂圖banner區尾 -->
+
+  <!-- 內容 -->
+  <section class="row justify-content-center pb-lg-7 pb-5 pt-lg-0 pt-4">
+    <!-- row justify-content-center 水平置中 -->
+    <div class="container row justify-content-center">
+      <!-- row justify-content-center 水平置中 -->
+
+      <h2 class="text-center pt-lg-5 mb-lg-5 mb-4">
+        最新消息
+      </h2>
+
+      <div class="col-lg-10 tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="freshnews" role="tabpanel" aria-labelledby="freshnews">
+          <div class="row row-cols-1 gy-4">
+            <div class="col">
+              <div class="card border-0 border-bottom border-2">
+                <div class="row align-items-center g-0">
+                  <div class="col-md-4">
+                    <a href="#">
+                      <img src="images/event-1.jpg" class="news-img w-100" alt="">
+                    </a>
+                  </div>
+
+                  <div class="col-md-8">
+                    <div class="card-body p-lg-4">
+                      <h4 class="card-title"><a href="#" class="text-decoration-none">新品！花香新舞動：嶄新登場花香手工皂系列</a></h4>
+                      <p class="card-text mb-lg-4">
+                        我們很高興宣布推出全新的花香手工香皂系列！這次的系列包括多種令人愛不釋手的天然花香成分，能夠提供極致的皮膚護理體驗。趕快來品嚐這些新品，感受自然的清新和滋潤。</p>
+                      <div class="card-text fw-light">
+                        <time>Apr 20, 2023</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card border-0 border-bottom border-2">
+                <div class="row align-items-center g-0">
+                  <div class="col-md-4">
+                    <a href="#">
+                      <img src="images/event-2.jpg" class="news-img w-100" alt="">
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body p-lg-4">
+                      <h4 class="card-title"><a href="#" class="text-decoration-none">獨家魅力，限時優惠7折！護膚新境界，快來體驗！</a></h4>
+                      <p class="card-text mb-lg-4">
+                        感謝您一直以來的支持，我們特別舉辦限時折扣活動！在活動期間，您可以享受手工香皂的7折價格，同時還有贈品和免運費優惠等福利。趕快來為您的護膚例行添加一些特別的產品！</p>
+                      <div class="card-text fw-light">
+                        <time>Apr 1, 2023</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card border-0 border-bottom border-2">
+                <div class="row align-items-center g-0">
+                  <div class="col-md-4">
+                    <a href="#">
+                      <img src="images/event-3.jpg" class="news-img w-100" alt="">
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body p-lg-4">
+                      <h4 class="card-title"><a href="#" class="text-decoration-none">手工香皂工作坊，探索護膚的藝術與樂趣！現在報名，感受匠心之美</a>
+                      </h4>
+                      <p class="card-text mb-lg-4">
+                        我們將舉辦一個手工香皂製作工作坊，讓您親自體驗如何製作您自己的香皂！我們的專家將指導您選擇成分、混合精油，並親手製作一個獨特的香皂。這是一個有趣和教育的活動，適合所有年齡段的人參加。
+                      </p>
+                      <div class="card-text fw-light">
+                        <time>March 20, 2023</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card border-0 border-bottom border-2">
+                <div class="row align-items-center g-0">
+                  <div class="col-md-4">
+                    <a href="#">
+                      <img src="images/event-4.jpg" class="news-img w-100" alt="">
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body p-lg-4">
+                      <h4 class="card-title"><a href="#"
+                          class="text-decoration-none">包裝升級，精緻再進化！全新外觀，讓手工香皂成為時尚與自然的絕佳結合！</a></h4>
+                      <p class="card-text mb-lg-4">
+                        我們對產品的包裝進行了重新設計，以更好地反映我們對環保的承諾。新的包裝材料更環保，可回收，有助於減少對環境的影響。我們相信，美麗的皮膚護理產品應該與環保相結合。</p>
+                      <div class="card-text fw-light">
+                        <time>Set 26, 2022</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card border-0 border-bottom border-2">
+                <div class="row align-items-center g-0">
+                  <div class="col-md-4">
+                    <a href="#">
+                      <img src="images/event-5.jpg" class="news-img w-100" alt="">
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body p-lg-4">
+                      <h4 class="card-title"><a href="#"
+                          class="text-decoration-none">讓您的手工香皂之旅成為共鳴的美好回憶。加入分享，激發護膚心靈對話！</a>
+                      </h4>
+                      <p class="card-text mb-lg-4">
+                        我們鼓勵客戶分享使用我們產品的故事和體驗！分享您的照片和評論，標記我們的社交媒體帳號，有機會得到手工香皂的免費贈品及免運費優惠喔。
+                      </p>
+                      <div class="card-text fw-light">
+                        <time>May 6, 2022</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <nav aria-label="Page navigation" class="mt-lg-7 mt-5">
+            <ul class="font-family-bebas-neue justify-content-center pagination fs-5 d-flex align-items-center">
+              <!-- d-flex align-items-center 垂直置中 -->
+              <li class="page-item">
+                <a class="page-link border-0 bg-transparent" href="#" aria-label="Previous">
+                  <i class="bi bi-caret-left"><img src="./images/icon-left.svg" alt=""></i>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link border-0 bg-transparent" href="#">1</a></li>
+              <li class="page-item"><a class="page-link border-0 bg-transparent" href="#">2</a></li>
+              <li class="page-item"><a class="page-link border-0 bg-transparent" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link border-0 bg-transparent" href="#" aria-label="Previous">
+                  <i class="bi bi-caret-left"><img src="./images/icon-right.svg" alt=""></i>
+                </a>
+
+              </li>
+            </ul>
+          </nav>
+
+  </section>
+
+
+  <!-- 頁尾區 -->
+  <footer>
+    Copyright © 2025 皂咖霏 版權所有 All rights reserved.
+  </footer>
+
+  <!-- Bootstrap的JS語法Bundle捆 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

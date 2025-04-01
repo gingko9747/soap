@@ -1,0 +1,402 @@
+body {
+    background-color: #f7f5ee
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f5ee;
+    background-size: 20px;
+    /* position: relative; */
+}
+
+/* LOGO 自動比例縮放*/
+header img {
+    width: min(calc(100px + 20vw), 345px);
+    height: auto;
+}
+
+/* <!-- 老師改的 -->登入圖(原放LOGO)靠在左邊,解法:用@media(min-width:768px){}把登入圖跟選單包在一起 */
+@media(min-width:768px) {
+    .navbar-collapse {
+        flex-basis: auto;
+        flex-grow: 0;
+    }
+}
+
+/* ======全站 Bootstrap nav區====== */
+
+/* 選單淺咖啡橫條 */
+.navbar {
+    /* position: relative; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* 允許換行 */
+    /* align-items: center; */
+    /* 垂直置中 */
+    /* justify-content: space-between; */
+    /* 水平分散 */
+    padding: 2px 0px 1.5px 0px;
+    /* nav導覽列的上下距離 上 右 下 左 */
+}
+
+/* Bootstrap 導覽列顏色 */
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: rgb(242, 236, 222) !important;
+    /* background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important; */
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem;
+    letter-spacing: 1.6px;
+    /* 字與字之間的間距 */
+}
+
+.navbar-brand {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    /* margin-right:0px; */
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* nav選單按鈕左右的間距 */
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 1.3rem;
+    padding-left: 1.3rem;
+}
+
+/* 漢堡選單的修改 */
+.navbar-toggler {
+    padding: 0.1rem 0.5rem;
+    margin: 8px 5px;
+}
+
+
+/* 首頁 Bootstrap選單區 3種滑鼠狀態*/
+/* 按鈕一般狀態 */
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(127, 102, 102);
+    border-radius: 10px;
+    /* 按鈕圓角 */
+}
+
+/* 首頁 滑鼠滑入 */
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(127, 102, 102);
+    background-color: rgba(204, 232, 225, 0.616);
+    transition-duration: 0.2s, 0.4s;
+    /* transition 過渡進行的時間長度(漸變產生的動畫效果) */
+}
+
+/* 首頁 按鈕作用中 */
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: rgb(127, 102, 102);
+    background-color: rgb(205, 233, 224);
+}
+
+.navbar-brand h1 {
+    font-size: min(calc(1rem + 1.3vw), 32px);
+}
+
+/* 首頁.bannner 區域 =============================================== */
+
+.slider {
+    text-align: center;
+    /* margin: 30px; */
+}
+
+.slider img {
+    max-width: 100%;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 首頁main 區域 =================================================== */
+
+/* 首頁內容全部居中 */
+.container {
+    text-align: center;
+}
+
+/* 首頁大圖輪播 */
+.banner {
+    width: 1200px;
+}
+
+/* 首頁大標 */
+
+main h1 {
+    font-size: min(calc(1rem + 2.8vw), 52px);
+    /* 文字隨畫面大小自動縮放 */
+    color: #98cccc;
+    /* font-size: 2.6rem; */
+    background-position: center;
+    margin: 35px auto 25px auto;
+    text-align: center;
+}
+
+/* 商品標題 */
+
+h3 {
+    display: block;
+    /* font-size: 1.17em; */
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #816767;
+    /* margin-block-start: 1em; */
+    /* margin-block-end: 1em; */
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    /* font-weight: bold; */
+}
+
+/* 頁首文字敘述 */
+main p {
+    color: #816767;
+    line-height: 1.9;
+    /* 1.9倍行距 */
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* 滑鼠感應區 */
+
+a {
+    text-decoration: none;
+}
+
+.content h1 p {
+    /* font-size: 16px; */
+    width: 150;
+    height: 60;
+    border-bottom: 30px;
+}
+
+/* 熱門商品區 */
+
+/* 最外圍大盒子 */
+.bbox_all {
+    text-align: center;
+}
+
+/* 包在裡面的小格子 */
+.box {
+    width: 300px;
+    /* height: 460px; */
+    /* 去掉高可呈現因文字造成高低不同的效果 */
+    vertical-align: top;
+    /* 將浮動元素上部對齊 */
+    border: solid 1px #999999;
+    margin: 10px 10px 40px 10px;
+    text-align: left;
+    display: inline-block;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+}
+
+.box h2 {
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #816767;
+    padding: 20px 8px 0px 8px;
+}
+
+.box a {
+    text-decoration: none;
+}
+
+/* 小盒子裡面的圖只要上圓角(四邊圓角的設定) */
+.box a img {
+    transition: 0.25s;
+    /* 轉廠過程,img在滑鼠滑入時有變化設計, 則以0.25秒呈現轉場的過程 */
+    border-top-left-radius: 7px;
+    /* 左上角圆角半径为7像素 */
+    border-top-right-radius: 7px;
+    /* 右上角圆角半径为7像素 */
+    border-bottom-right-radius: 0px;
+    /* 右下角圆角半径为0像素 */
+    border-bottom-left-radius: 0px;
+    /* 左下角圆角半径为0像素 */
+    /* width: 99.999999%; */
+}
+
+/* 小盒子圖片的陰影特效 */
+
+/* 效果1 全box圖光暈 */
+.box:hover {
+    box-shadow: 0 0 8px 2.5px #acdada;
+    /* 區塊陰影: 水平偏移 垂直偏移 模糊擴散 邊緣擴展 顏色 */
+    transition-duration: 0.4s, 0.4s;
+    /* transition漸變效果 */
+}
+
+/* 效果2上面圖片光有暈 */
+/* .box a img:hover { */
+/* box-shadow: 0 0 10px 3px #98cccc; */
+/* } */
+
+.box_inner p {
+    font-size: 18px;
+    color: #816767;
+    line-height: 1.6;
+    /* 1.6倍行距 */
+    margin-bottom: 12px;
+    /* padding: 5px 10px 10px 10px; */
+}
+
+
+/* 商品box購物車小圖 加入收藏小圖 */
+.card-btn-group {
+    /* justify-content: space-between; */
+    justify-content: right;
+    /* width: 100%; */
+    display: flex;
+    /* padding: 0 12px; */
+    padding-left: 20px;
+    margin-top: -20px;
+}
+
+
+/* 各別商品詳細說明頁 =================================================== */
+
+
+/* 跳到上一頁與下一頁產品內容的連結 */
+
+.page p {
+    color: #816767;
+    /* font-size: 20px; */
+    line-height: 2;
+    margin: 0px 0px 5px 0px;
+    text-align: center;
+    letter-spacing: 1.8px;
+}
+
+.page a {
+    color: #816767;
+    font-size: 18px;
+}
+
+.page a:hover {
+    color: #83bbbb;
+}
+
+/* 主要產品-圖片區(左欄) */
+aside {
+    width: 80%;
+    /* float: right; */
+    /* float: left; */
+    /* 圖片靠左右 */
+    margin: 0px auto;
+    /* 置中 */
+}
+
+aside img {
+    width: 90%;
+    height: auto;
+    /* 高度依原圖比例自動計算 */
+    border-radius: 8px;
+    /* 圓角 */
+}
+
+/* 主要產品-文字內容區(右欄) */
+
+main .content {
+    width: 85%;
+    text-align: left;
+    margin: -40px auto;
+}
+
+/* 產品文字(li清單)排版區 */
+
+/* 數量選單 */
+.quantity {
+    color: #816767;
+    font-size: 17px;
+}
+
+/* 價格文字 */
+.product h1 {
+    display: inline-block;
+    font-size: 30px;
+    color: #816767;
+    letter-spacing: 2px;
+}
+
+.product p {
+    color: #9b8484;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1.2px;
+    text-align: left;
+    margin-bottom: 18px;
+
+}
+
+.product h2 {
+    margin: 30px 0 20px 0;
+    font-size: 24px;
+    color: #83bbbb;
+}
+
+.product li {
+    list-style-type: none;
+    /* 去除小黑点 */
+    color: #816767;
+    font-size: 20px;
+    line-height: 2.5;
+    /* 2.5倍行距 */
+}
+
+
+/*  按鈕-產品購買 / 加入收藏 */
+.cart_heart {
+    text-align: center;
+    /*2顆按鈕置中 */
+    /* padding: 10px 30px; */
+}
+
+.product li a {
+    font-size: 21px;
+    color: #816767;
+    background-color: #c2e8e2;
+    text-align: center;
+    letter-spacing: 1.2px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    /* 圓角 */
+    margin: 30px 20px 30px 0px;
+    white-space: nowrap;
+    /* 強迫不自動換行 */
+    line-height: 3.5;
+    /* 用行距撐高縮小螢幕後的按鈕間距 */
+}
+
+.product li a:hover {
+    color: #816767;
+    background-color: #f4d9d1;
+    transition-duration: 0.5s, 2.5s;
+    /* transition漸變效果 */
+}
+
+
+/* 頁尾 */
+footer {
+    text-align: center;
+    height: 60px;
+    padding-top: 20px;
+    margin-top: 50px;
+    color: #816767;
+    background-color: #f1ebdd;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* position: absolute; */
+    /* width: 100%; */
+}

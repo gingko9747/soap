@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皂咖霏手工皂-您的購物車</title>
+
+  <!--Bootstrap架構語法 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./layout.css">
+
+  <!-- CSS撰寫開始 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* ==================以下自改=============================== */
+
+
+    body {
+      color: #816767;
+    }
+
+    /* 重要中間間隔線 */
+    .subtotal {
+      margin-top: 6px;
+      padding-right: 8px;
+      padding-bottom: 8px;
+      width: 100%;
+      text-align: right;
+      /* border-top: 1px solid #C7B299; */
+      /* border-bottom: 1px solid #C7B299; */
+      white-space: nowrap;
+      /* 不換行 */
+    }
+
+    .text-primary {
+      color: #534741 !important;
+    }
+
+    .btn-outline-secondary {
+      color: #C7B299;
+      border-color: #C7B299;
+    }
+
+    /* 最上欄購物車標題字 */
+    .bg-secondary {
+      background-color: #f7f5ee !important;
+    }
+
+    /* 價格明細的邊距 左間距 右間距  */
+    .px-md-5 {
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+    }
+
+    .py-1 {
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+
+    /* 垃圾桶按鈕 */
+    .pt-3 {
+      padding-top: 0.4rem !important;
+      /* padding-left: 20px; */
+    }
+
+    .py-4 {
+      padding: 13px !important;
+    }
+
+    /* 間隔線距離 */
+    .py-5 {
+      padding-top: 2.2rem !important;
+      padding-bottom: 2.2rem !important;
+    }
+
+
+    .h1 {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      padding-top: 20px;
+    }
+
+    .h4 {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: 768px) {
+      .cart-img {
+        width: 150px;
+        min-height: 150px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .col-md-4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        /* max-width: 30%; */
+      }
+    }
+
+    /* 產品名稱下來一點 */
+    @media (min-width: 768px) {
+      .col-md-6 {
+        flex: 0 0 auto;
+        width: 50%;
+        padding-top: 10px;
+      }
+    }
+
+    /* 產品圖片 */
+    .cart-img {
+      width: 100%;
+      min-height: 130px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      border-radius: 6px;
+      /* 圓角 */
+    }
+
+    /* 產品間隔線 */
+    @media (min-width: 768px) {
+      .cart-row+.cart-row::before {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 0;
+        width: calc(100% - 20px);
+        content: "";
+        border-top: 1px solid #C7B299;
+      }
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #c0c0c0 !important;
+    }
+
+    /* +-按鈕的大小 */
+    .btn-group-cart .btn {
+      padding: 0.6rem 1.1rem !important;
+    }
+
+    /* 結帳按鈕 */
+    .btn-accent {
+      width: 100%;
+      color: #816767;
+      background-color: rgb(204, 232, 225);
+      /* border-radius: 18px; */
+      /* border-color: #816767; */
+    }
+
+    /* 結帳按鈕滑入 */
+    .btn:hover {
+      color: #816767;
+      background-color: #f4d9d1;
+      /* transition-duration: 0.7s, 0.3s; */
+      /* transition漸變效果 */
+      border: 1px solid #f4d9d1;
+    }
+
+
+
+
+    /* 右側結帳欄顏色 */
+    .orderModule {
+      color: rgb(127, 102, 102);
+      background-color: rgb(242, 236, 222);
+    }
+
+    /* 右側結帳欄寬度 */
+    @media (min-width: 768px) {
+      .col-md-4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+        position: relative;
+        width: 100%;
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+    }
+
+    /* 頂圖banner區 */
+    .bg-image-signup {
+      background-image: url(./images/img-cart.jpg);
+    }
+
+    .bg-image {
+      background-position: 80%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+    }
+  </style>
+
+</head>
+
+<!-- HTML撰寫開始 -->
+
+<body>
+
+  <header>
+    <!-- LOGO區 -->
+    <a href="./index.html">
+      <img src="./images/logo-1.svg" alt="">
+    </a>
+  </header>
+
+  <!--  Bootstrap header(LOGO nav選單區)  -->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top text-nowrap">
+    <!-- text-nowrap強制不自動換行 -->
+
+    <!-- 導覽列黏貼sticky-top(原來不在最上面,走到上面才黏在最上面)或 恆置頂fixed-top -->
+    <div class="container-xl justify-content-md-center">
+      <!-- 把按鈕集中到中央container-xl(寬1200px),預設值container-fluid從頭到尾都百分百 -->
+
+      <!-- 桌機版·手機版都會看到-頭 -->
+
+      <!-- LOGO圖區 (登入小人圖)-->
+      <a class="navbar-brand" href="./login.html">
+        <img src="./images/icon _person.svg" height="35" alt=""> <!-- LOGO高度35 -->
+      </a>
+      <!-- 桌機版·手機版都桌機版會看到-尾 -->
+
+      <!-- 手機版會看到-頭 -->
+      <!-- 漢堡圖案紐button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- 手機版會看到-尾 -->
+
+      <!-- 桌機版會看到-頭 ,手機版這裡會先(收合collapse) -->
+      <!-- 導覽按鈕collapse navbar-collapse -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- ul一組頭 -->
+        <ul class="navbar-nav m-auto mb-4 mb-md-0 text-center">
+          <!-- ms-auto靠左邊 ,md-靠右 ,m-auto左右居中,mb-4漢堡選單下方的間距,text-center文字置中-->
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="healing.html">一般療癒系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="sensitive_skin.html"> 特殊肌膚系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="house_pets.html">家事&寵物系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="news.html">最新消息</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">與我們聯絡</a>
+          </li>
+
+          <!-- 桌機版要出現圖 手機版要出現圖跟文字 -->
+          <li class="nav-item">
+            <a class="nav-link" href="./shopping-carts.html">
+              <!-- 解法:用<span>下指令讓文字在手機版不要出現-->
+              <span class="d-md-none">加入購物車</span>
+              <img src="./images/icon _shopping cart.svg" alt=""></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./add-heart.html">
+              <span class="d-md-none">加入收藏</span>
+              <img src="./images/icon _heart.svg" alt=""></a>
+          </li>
+
+        </ul>
+      </div>
+  </nav>
+
+  <!-- 頂圖banner區頭 -->
+
+  <div class="bg-image bg-image-signup">
+  </div>
+  <!-- 頂圖banner區尾 -->
+
+  <section class="mt-5 carts">
+    <div class="container container-md">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="h1 bg-secondary py-4 text-center mb-0">您的購物車</h1>
+          <div class="row cart-row d-flex align-items-center py-5 border-bottom">
+
+            <div class="col-md-3 col-6">
+              <div class="cart-img" style="background-image: url(./images/504050_0s.jpg);"></div>
+            </div>
+
+            <div class="col-md-6 col-6">
+              <div class="row no-gutters">
+                <div class="col-md-6">
+                  <div class="h4 mb-0">世界地圖皂</div>
+                  <div class="mb-3">NT$ 550</div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="btn-group btn-group-cart" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-secondary text-primary">-</button>
+                    <button type="button" class="btn btn-outline-secondary text-primary">2</button>
+                    <button type="button" class="btn btn-outline-secondary text-primary">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 間隔線 -->
+            <div class="col-lg-3 d-flex justify-content-between">
+              <div class="subtotal h4 mb-0 pt-md-1">NT$ 1100</div>
+              <a href="javascript:;" class="btn d-md-block text-primary pt-3"><i class="material-icons mt-n4"></i><img
+                  src="./images/delete.svg" alt=""></a>
+            </div>
+          </div>
+
+
+
+          <div class="row cart-row d-flex align-items-center py-5 border-bottom">
+            <div class="col-md-3 col-6">
+              <div class="cart-img" style="background-image: url(./images/504077_s.jpg);"></div>
+            </div>
+            <div class="col-md-6 col-6">
+              <div class="row no-gutters">
+                <div class="col-md-6">
+                  <div class="h4 mb-0">乘風破浪情境皂</div>
+                  <div class="mb-3">NT$ 550</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="btn-group btn-group-cart" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-secondary text-primary">-</button>
+                    <button type="button" class="btn btn-outline-secondary text-primary">1</button>
+                    <button type="button" class="btn btn-outline-secondary text-primary">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 間隔線 -->
+            <div class="col-lg-3 d-flex justify-content-between">
+              <div class="subtotal h4 mb-0 pt-md-1">NT$ 550</div>
+
+              <a href="javascript:;" class="btn d-md-block text-primary pt-3"><i class="material-icons mt-n4"></i><img
+                  src="./images/delete.svg" alt=""></a>
+            </div>
+          </div>
+
+          <div class="row cart-row d-flex align-items-center py-5 border-bottom">
+            <div class="col-md-3 col-6">
+              <div class="cart-img" style="background-image: url(./images/504051_0s.jpg);"></div>
+            </div>
+            <div class="col-md-6 col-6">
+              <div class="row no-gutters">
+                <div class="col-md-6">
+                  <div class="h4 mb-0">炸蝦天婦羅皂</div>
+                  <div class="mb-3">NT$ 550</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="btn-group btn-group-cart" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-secondary text-primary">-</button>
+                    <button type="button" class="btn btn-outline-secondary text-primary">1</button>
+                    <button type="button" class="btn btn-outline-secondary text-primary">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-3 d-flex justify-content-between">
+              <div class="subtotal h4 mb-0 pt-md-1">NT$ 550</div>
+              <a href="javascript:;" class="btn d-md-block text-primary pt-3"><i class="material-icons mt-n4"></i><img
+                  src="./images/delete.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 左側結算欄 -->
+        <div class="col-md-4">
+          <div class="orderModule px-md-5 pb-4">
+            <h3 class="orderModule-title text-center mb-md-0 mb-4  text-nowrap">訂單摘要</h3>
+            <hr class="border-white d-md-block">
+            <div class="d-flex justify-content-between py-1 text-nowrap">
+              <span>小計</span>
+              <span>NT$ 2,200</span>
+            </div>
+
+            <div class="d-flex justify-content-between py-1 text-nowrap">
+              <span>運費</span>
+              <span>NT$ 100</span>
+            </div>
+            <div class="d-flex justify-content-between py-1 text-nowrap">
+              <span class="h4 mb-0">總計</span>
+              <span class="h4 mb-0">NT$ 2,300</span>
+            </div>
+          </div>
+
+          <div class="row-xs mx-md-0">
+            <a href="#" class="btn btn-accent btn-block py-4"><span class="h4 mb-0">結帳</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 頁尾區 -->
+
+  <footer>
+    Copyright © 2025 皂咖霏 版權所有 All rights reserved.
+  </footer>
+
+
+  <script src="./js/jquery-3.7.0.min.js"></script>
+  <script src="./js/tea/meal.js"></script>
+
+  <!-- Bootstrap的JS語法Bundle捆 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

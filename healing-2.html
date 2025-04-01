@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>皂咖霏手工皂-一般療癒系列 乘風破浪情境皂</title>
+
+    <!--Bootstrap架構語法 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./layout.css">
+
+    <!-- CSS撰寫開始 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* "container"容器的意思,作為最外框架,目的在限制最大寬度*/
+        .container {
+            min-height: 800px;
+            max-width: 1200px;
+            margin: 0 auto;
+            /* border: solid 1px #999999; */
+            display: flex;
+            flex-wrap: wrap;
+            /* 換行 */
+        }
+
+        .column {
+            flex: 1;
+            min-width: 200px;
+            padding: 35px 0px 0px 0px;
+            /* border: 1px solid #ccc; */
+        }
+
+        /* 在較小屏幕上切换為垂直排列 */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .column {
+                flex: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<!-- HTML撰寫開始 -->
+
+<body>
+
+    <header>
+        <!-- LOGO區 -->
+        <a href="./index.html">
+            <img src="./images/logo-1.svg" alt="">
+        </a>
+    </header>
+
+    <!--  Bootstrap header(LOGO nav選單區)  -->
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top text-nowrap">
+        <!-- text-nowrap強制不自動換行 -->
+
+        <!-- 導覽列黏貼sticky-top(原來不在最上面,走到上面才黏在最上面)或 恆置頂fixed-top -->
+        <div class="container-xl justify-content-md-center">
+            <!-- 把按鈕集中到中央container-xl(寬1200px),預設值container-fluid從頭到尾都百分百 -->
+
+            <!-- 桌機版·手機版都會看到-頭 -->
+
+            <!-- LOGO圖區 (登入小人圖)-->
+            <a class="navbar-brand" href="./login.html">
+                <img src="./images/icon _person.svg" height="35" alt=""> <!-- LOGO高度35 -->
+            </a>
+            <!-- 桌機版·手機版都桌機版會看到-尾 -->
+
+            <!-- 手機版會看到-頭 -->
+            <!-- 漢堡圖案紐button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 手機版會看到-尾 -->
+
+            <!-- 桌機版會看到-頭 ,手機版這裡會先(收合collapse) -->
+            <!-- 導覽按鈕collapse navbar-collapse -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- ul一組頭 -->
+                <ul class="navbar-nav m-auto mb-4 mb-md-0 text-center">
+                    <!-- ms-auto靠左邊 ,md-靠右 ,m-auto左右居中,mb-4漢堡選單下方的間距,text-center文字置中-->
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link  active" href="healing.html">一般療癒系列</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="sensitive_skin.html"> 特殊肌膚系列</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="house_pets.html">家事&寵物系列</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">最新消息</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">與我們聯絡</a>
+                    </li>
+
+                    <!-- 桌機版要出現圖 手機版要出現圖跟文字 -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="./shopping-carts.html">
+                            <!-- 解法:用<span>下指令讓文字在手機版不要出現-->
+                            <span class="d-md-none">加入購物車</span>
+                            <img src="./images/icon _shopping cart.svg" alt=""></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./add-heart.html">
+                            <span class="d-md-none">加入收藏</span>
+                            <img src="./images/icon _heart.svg" alt=""></a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+    </nav>
+
+
+
+    <!-- /* 跳到上一頁與下一頁產品內容的連結 */ -->
+    <div class="page">
+        <p><a href="healing-1.html"><br>
+                <img src="./images/icon_button-prev.svg" alt="">　上一個產品</a><a href="healing-3.html">　下一個產品　<img
+                    src="./images/icon_button-next.svg" alt=""></a></p>
+    </div>
+
+    <!-- /* 主要產品內容區 */ -->
+    <main>
+
+        <div class="container">
+
+            <!-- 為了一列兩欄可RWD在較小屏幕上切换為垂直上下排列,包一個column的div -->
+            <div class="column">
+                <!-- /* 主要產品圖片區(靠左) */ -->
+                <aside>
+                    <img src="./images/504077.jpg" alt="">
+                </aside>
+            </div>
+
+            <!-- 為了一列兩欄可RWD在較小屏幕上切换為垂直上下排列,包一個column的div -->
+            <div class="column">
+                <!-- /* 主要產品文字內容區(靠右) */ -->
+                <div class="content">
+                    <!-- /* 產品文字(li清單)排版區 */ -->
+                    <ul class="product">
+                        <h1>乘風破浪情境皂</h1><br>
+                        <p>NT$550</p>
+
+                        <!-- 購買數量選單 -->
+                        <div class="quantity">
+                            <label for="quantity">數量：</label>
+                            <input type="number" id="quantity" name="quantity" min="0">
+                        </div>
+
+                        <h2>
+                            產品資訊
+                        </h2>
+                        <li>重量：100g (±5%)</li>
+                        <li>適合中性肌膚</li>
+                        <li>精油：薰衣草</li>
+                        <li>薰衣草精油的特性：鎮靜、消炎、舒緩刺激、促進傷口癒合。</li>
+                        <li>舒緩和鎮靜：適用於敏感皮膚或因日曬、昆蟲叮咬等引起不適的皮膚。</li>
+                        <li>抗菌和殺菌：幫助清除皮膚表面的細菌，有助於預防感染。</li>
+                        <br>
+
+                        <!-- /*  按鈕->產品購買 / 加入收藏 */ -->
+                        <div class="cart_heart">
+                            <li><a href="./shopping-carts.html" class="">加入購物車 <img
+                                        src="./images/icon _shopping cart.svg" alt=""></a>
+                                <a href="./add-heart.html" class="">加入收藏 <img src="./images/icon _heart.svg" alt=""></a>
+                            </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div><!-- 為了一列兩欄可RWD在較小屏幕上切换為垂直上下排列,包一個column的div 結束-->
+
+    </main>
+
+    <!-- 頁尾區 -->
+
+    <footer>
+        Copyright © 2024 皂咖霏 版權所有 All rights reserved.
+    </footer>
+
+
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <script src="./js/tea/meal.js"></script>
+
+    <!-- Bootstrap的JS語法Bundle捆 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

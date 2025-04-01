@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皂咖霏手工皂-特殊肌膚系列</title>
+
+  <!--Bootstrap架構語法 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!-- JQ大圖輪播外掛始 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+  <!-- 先別人後自己的-->
+  <link rel="stylesheet" href="./layout.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* <!-- 老師改的 -->登入圖(原放LOGO)靠在左邊,解法:用@media(min-width:768px){}把登入圖跟選單包在一起 */
+    @media(min-width:768px) {
+      .navbar-collapse {
+        flex-basis: auto;
+        flex-grow: 0;
+      }
+    }
+
+    /* 系列頁首大圖底下到小格的間距 */
+    .slider {
+      margin-bottom: 45px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- LOGO -->
+  <header>
+    <a href="./index.html">
+      <img src="./images/logo-1.svg" alt="">
+    </a>
+  </header>
+
+
+  <!--  Bootstrap header(LOGO nav選單區)  -->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top text-nowrap">
+    <!-- text-nowrap強制不自動換行 -->
+
+    <!-- 導覽列黏貼sticky-top(原來不在最上面,走到上面才黏在最上面)或 恆置頂fixed-top -->
+    <div class="container-xl justify-content-md-center">
+      <!-- 把按鈕集中到中央container-xl(寬1200px),預設值container-fluid從頭到尾都百分百 -->
+
+      <!-- 桌機版·手機版都會看到-頭 -->
+
+      <!-- LOGO圖區  (登入小人圖)-->
+      <a class="navbar-brand" href="./login.html">
+        <img src="./images/icon _person.svg" height="35" alt="">
+        <!-- LOGO高度35 -->
+      </a>
+      <!-- 桌機版·手機版都桌機版會看到-尾 -->
+
+      <!-- 手機版會看到-頭 -->
+      <!-- 漢堡圖案紐button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- 手機版會看到-尾 -->
+
+      <!-- 桌機版會看到-頭 ,手機版這裡會先(收合collapse) -->
+      <!-- 導覽按鈕collapse navbar-collapse -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- ul一組頭 -->
+        <ul class="navbar-nav m-auto mb-4 mb-md-0 text-center">
+          <!-- ms-auto靠左邊 ,md-靠右 ,m-auto左右居中,mb-4漢堡選單下方的間距,text-center文字置中-->
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="healing.html">一般療癒系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="sensitive_skin.html"> 特殊肌膚系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="house_pets.html">家事&寵物系列</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="news.html">最新消息</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">與我們聯絡</a>
+          </li>
+
+          <!-- 桌機版要出現圖 手機版要出現圖跟文字 -->
+          <li class="nav-item">
+            <a class="nav-link" href="./shopping-carts.html">
+              <!-- 解法:用<span>下指令讓文字在手機版不要出現-->
+              <span class="d-md-none">加入購物車</span>
+              <img src="./images/icon _shopping cart.svg" alt=""></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./add-heart.html">
+              <span class="d-md-none">加入收藏</span>
+              <img src="./images/icon _heart.svg" alt=""></a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+  </nav>
+
+  <!-- 頁首文字敘述 -->
+  <main>
+    <h1>特殊肌膚系列</h1>
+    <p>
+      對於特殊肌膚，使用天然成分、不含刺激性化學物質，能夠溫和清潔並保濕肌膚。<br />
+      產品經過配方組成的精油，有助於平衡皮膚，緩解不適。<br />
+      溫和的配方，散發出舒緩的香氣，適合敏感或容易受刺激的皮膚。<br />
+      給予您的特殊肌膚愛和呵護，感受自然的力量，展現自信美麗。<br />
+    </p>
+
+    <!-- 系列頁首大圖 -->
+    <div class="slider">
+      <img src="./images/banner_index-2.jpg" class="card" alt="">
+    </div>
+  </main>
+
+  <!-- 內容大盒子 -->
+  <div class="bbox_all">
+
+    <!-- <div class="bbox_all col-md m-auto mb-md-0 text-center"> -->
+    <!-- <ul class="navbar-nav m-auto mb-4 mb-md-0 text-center"> -->
+    <!-- ms-auto靠左邊 ,md-靠右 ,m-auto左右居中,mb-4漢堡選單下方的間距,text-center文字置中-->
+
+
+    <!-- 個別產品小格1 -->
+    <div class="box">
+      <a href="sensitive_skin-1.html">
+        <!-- 點圖連結到個別介紹頁 #換成 sensitive_skin-1.html -->
+
+        <div class="box_image">
+          <img src="./images/504048_0s.jpg" alt="" />
+        </div>
+
+        <!-- box的小盒文字內容 -->
+        <div class="box_inner">
+          <div class="card-body"><a href="sensitive_skin-1.html" class="card-title">
+              <h3>漢方問題肌膚舒緩皂</h3>
+
+              <div class="product-price">
+                <p>
+                  痘痘肌、乾性等敏感肌<br />
+                  精油：薰衣草、歐薄荷、廣霍香、中藥
+                </p>
+                <p class="on-sale-price">NT$550</p>
+            </a>
+            <div class="card-btn-group">
+              <div class="card-btn-group">
+                <a class="heart_1" href="./add-heart.html">
+                  <img src="./images/icon _heart_1.svg" alt="">
+                </a>
+              </div>
+
+              <div class="card-btn-group">
+                <a class="cart_1" href="./shopping-carts.html">
+                  <img src="./images/icon _shopping cart_1.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </a>
+  </div>
+  <!-- 個別產品小格1 -->
+
+  <!-- 個別產品小格2 -->
+
+  <div class="box">
+    <a href="sensitive_skin-2.html">
+      <!-- 點圖連結到個別介紹頁 #換成sensitive_skin-2.html-->
+
+      <div class="box_image">
+        <img src="./images/504046_0s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="sensitive_skin-2.html" class="card-title">
+            <h3>金絲桃蠶絲皂</h3>
+
+            <div class="product-price">
+              <p>
+                適合敏感性肌膚<br />
+                精油：茶樹（抗菌）
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+  <!-- 個別產品小格2 -->
+
+  <!-- 個別產品小格3 -->
+
+  <div class="box">
+    <a href="sensitive_skin-3.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/504103_0_s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="sensitive_skin-3.html" class="card-title">
+            <h3>酪梨油皂（痘痘肌）</h3>
+
+            <div class="product-price">
+              <p>
+                適合敏感性肌膚<br />
+                酪梨油：滋潤、保濕、皮膚修護
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+
+  <!-- 個別產品小格4 -->
+
+  <div class="box">
+    <a href="sensitive_skin-4.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/504106_0_s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="sensitive_skin-4.html" class="card-title">
+            <h3>漢方舒緩皂（異位性皮膚炎）</h3>
+
+            <div class="product-price">
+              <p>
+                適合敏感性肌膚<br />
+                漢方調理問題肌膚
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+
+  <!-- 個別產品小格5 -->
+
+  <div class="box">
+    <a href="sensitive_skin-5.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/504104_0_s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="sensitive_skin-5.html" class="card-title">
+            <h3>月桂果油皂（痤瘡、濕疹、牛皮癬和真菌感染等問題）</h3>
+
+            <div class="product-price">
+              <p>
+                適合敏感性肌膚<br />
+                月桂果油：保濕、抗氧化、柔軟皮膚。
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+
+  <!-- 個別產品小格6 -->
+
+  <div class="box">
+    <a href="sensitive_skin-6.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/504098_s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="sensitive_skin-6.html" class="card-title">
+            <h3>日日平安艾草皂（乾性肌）</h3>
+
+            <div class="product-price">
+              <p>
+                適合乾性肌膚<br />
+                精油：歐薄荷、玫瑰天竺葵、雪松、午時平安水<br />
+
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+
+  <!-- 個別產品小格7 -->
+
+  <div class="box">
+    <a href="sensitive_skin-7.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/504100_s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="sensitive_skin-7.html" class="card-title">
+            <h3>水貂油親膚皂（乾性肌）</h3>
+
+            <div class="product-price">
+              <p>
+                適合乾性肌膚<br />
+                精油：玫瑰天竺葵、草本複方、雪松
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+
+  <!-- 個別產品小格8 -->
+
+  <div class="box">
+    <a href="sensitive_skin-8.html">
+      <!-- 點圖連結到個別介紹頁 -->
+
+      <div class="box_image">
+        <img src="./images/504107_0_s.jpg" alt="" />
+      </div>
+
+      <!-- box的小盒文字內容 -->
+      <div class="box_inner">
+        <div class="card-body"><a href="sensitive_skin-8.html" class="card-title">
+            <h3>漢方痘痘舒緩皂（痘痘肌）</h3>
+
+            <div class="product-price">
+              <p>
+                適用有痘痘問題的肌膚<br />
+                特調：中藥橄欖油、荷荷芭油
+              </p>
+              <p class="on-sale-price">NT$550</p>
+          </a>
+          <div class="card-btn-group">
+            <div class="card-btn-group">
+              <a class="heart_1" href="./add-heart.html">
+                <img src="./images/icon _heart_1.svg" alt="">
+              </a>
+            </div>
+
+            <div class="card-btn-group">
+              <a class="cart_1" href="./shopping-carts.html">
+                <img src="./images/icon _shopping cart_1.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </a>
+  </div>
+
+
+
+  </div><!-- 首頁內容下半大盒的尾 -->
+
+  <!-- 頁尾區 -->
+  <footer>
+    Copyright © 2025 皂咖霏 版權所有 All rights reserved.
+  </footer>
+
+  <!-- Bootstrap的JS語法Bundle捆 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+
+  <!-- 老師做的插入滑入會變顏色的按鈕 -->
+
+  <script>
+    $('.heart_1 img').on('mouseenter', function () {
+      $(this).attr('src', './images/icon _heart_2.svg')
+    });
+
+    $('.heart_1 img').on('mouseleave', function () {
+      $(this).attr('src', './images/icon _heart_1.svg')
+    });
+
+  </script>
+
+  <script>
+    $('.cart_1 img').on('mouseenter', function () {
+      $(this).attr('src', './images/icon _shopping cart_2.svg')
+    });
+
+    $('.cart_1 img').on('mouseleave', function () {
+      $(this).attr('src', './images/icon _shopping cart_1.svg')
+    });
+
+  </script>
+
+</body>
+
+</html>
